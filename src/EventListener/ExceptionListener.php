@@ -76,14 +76,14 @@ class ExceptionListener extends BaseExceptionListener
     {
         $entityConfig = isset($this->easyAdminConfig['entities'][$this->currentEntityName])
             ? $this->easyAdminConfig['entities'][$this->currentEntityName] : null;
-        $exceptionTemplatePath = isset($entityConfig['templates']['exception'])
+        $exceptionTemplatePath = (isset($entityConfig['templates']['exception'])
             ? $entityConfig['templates']['exception']
-            : isset($this->easyAdminConfig['design']['templates']['exception'])
+            : isset($this->easyAdminConfig['design']['templates']['exception']))
                 ? $this->easyAdminConfig['design']['templates']['exception']
                 : '@EasyAdmin/default/exception.html.twig';
-        $exceptionLayoutTemplatePath = isset($entityConfig['templates']['layout'])
+        $exceptionLayoutTemplatePath = (isset($entityConfig['templates']['layout'])
             ? $entityConfig['templates']['layout']
-            : isset($this->easyAdminConfig['design']['templates']['layout'])
+            : isset($this->easyAdminConfig['design']['templates']['layout']))
                 ? $this->easyAdminConfig['design']['templates']['layout']
                 : '@EasyAdmin/default/layout.html.twig';
 
